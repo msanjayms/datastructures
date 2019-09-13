@@ -41,6 +41,9 @@ public class BinaryTreeImpl {
 		System.out.println("Printing Post-Order Tranvesal:");
 		postorderTraversalBT(btImpl.rootNode);
 		System.out.println();
+		System.out.println("Printing Level-Order Tranvesal:");
+		levelorderTraversalBT(btImpl.rootNode);
+		System.out.println();
 	}
 
 	private static void preorderTraversalBT(BinaryTree node) {
@@ -50,7 +53,7 @@ public class BinaryTreeImpl {
 		preorderTraversalBT(node.leftNode);
 		preorderTraversalBT(node.rightNode);
 	}
-	
+
 	private static void inorderTraversalBT(BinaryTree node) {
 		if (node == null)
 			return;
@@ -58,13 +61,36 @@ public class BinaryTreeImpl {
 		System.out.print(node.data + " ");
 		inorderTraversalBT(node.rightNode);
 	}
-	
+
 	private static void postorderTraversalBT(BinaryTree node) {
 		if (node == null)
 			return;
 		postorderTraversalBT(node.leftNode);
 		postorderTraversalBT(node.rightNode);
 		System.out.print(node.data + " ");
+	}
+
+	private static void levelorderTraversalBT(BinaryTree node) {
+		if (node == null)
+			return;
+		Queue<BinaryTree> q = new LinkedList<BinaryTree>();
+
+		System.out.print(node.data + " ");
+		q.add(node);
+		while (!q.isEmpty()) {
+			BinaryTree n = q.poll();
+			BinaryTree leftNode = n.leftNode;
+			if (leftNode != null) {
+				System.out.print(leftNode.data + " ");
+				q.add(leftNode);
+			}
+			BinaryTree rightNode = n.rightNode;
+			if (rightNode != null) {
+				System.out.print(rightNode.data + " ");
+				q.add(rightNode);
+			}
+		}
+		
 	}
 
 	private void processBinaryTree() {
