@@ -20,15 +20,17 @@ public class BinarySearchTreeImpl {
 			insertBSTElement(newData, rootNode);
 			newData = getNextElement(scanner);
 		}
-		
+		System.out.print("Levelorder: ");
 		levelorderTraversalBST(rootNode);
-		System.out.println();
+		
+		System.out.println("\nPreorder: ");
 		preorderTraversalBST(rootNode);
-		System.out.println();
+		System.out.println("Inorder: ");
 		inorderTraversalBST(rootNode);
 //		printTree(rootNode);
-		System.out.println();
+		System.out.println("Postorder: ");
 //		System.out.println(level);
+		postorderTraversalBST(rootNode);
 	}
 
 	private static BinarySearchTree insertBSTElement(int newData, BinarySearchTree rootNode) {

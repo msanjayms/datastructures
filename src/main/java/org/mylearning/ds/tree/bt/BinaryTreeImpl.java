@@ -44,6 +44,7 @@ public class BinaryTreeImpl {
 		System.out.println("Printing Level-Order Tranvesal:");
 		levelorderTraversalBT(btImpl.rootNode);
 		System.out.println();
+		System.out.println("Height of this particular Binary Tree: " + btImpl.findHeightOfBT(btImpl.rootNode));
 	}
 
 	private static void preorderTraversalBT(BinaryTree node) {
@@ -90,7 +91,7 @@ public class BinaryTreeImpl {
 				q.add(rightNode);
 			}
 		}
-		
+
 	}
 
 	private void processBinaryTree() {
@@ -120,6 +121,15 @@ public class BinaryTreeImpl {
 			}
 			processBinaryTree();
 		}
+	}
+
+	private int findHeightOfBT(BinaryTree node) {
+
+		int height = 0;
+		if (node != null)
+			height = 1 + Math.max(findHeightOfBT(node.leftNode), findHeightOfBT(node.rightNode));
+
+		return height;
 	}
 
 	private static int scanForInput() {
