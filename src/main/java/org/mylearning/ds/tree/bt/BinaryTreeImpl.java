@@ -1,4 +1,4 @@
-package org.mylearning.ds.tree;
+package org.mylearning.ds.tree.bt;
 
 import java.util.LinkedList;
 import java.util.Queue;
