@@ -4,21 +4,6 @@ package org.mylearning.ds.algos;
  * The whole idea here is to find the substring with a maximum length, and no
  * repeat of charecter's
  * 
- * Substring is similar to Subarray with a difference where Substring is to
- * String and Subarray to Array's. Longest substring for a give string is
- * itself, and shortest being with length or window size = 1;
- * 
- * Also substring has to be continuous, meaning for a given string 'abcd', abc,
- * and bcd are substrings and not 'acb' or 'adc'.
- * 
- * First task (or the challenge) here is to find all the possible substring for
- * a given string. I am saying it as a challenge is because there's no straight
- * forward way/method to find all the substrings.
- * 
- * One way to find all the possible substring is to use 'Sliding Window'
- * technique. Where you have a window with a size, sliding one element at a
- * time.
- * 
  * 
  * @author sanjayms
  *
@@ -28,8 +13,8 @@ public class LongestSubstringWORepeation {
 
 	public static void main(String[] args) {
 		String str = "abcabcbb";
-
-		findAllPossibleSubstrings(str);
+		SubstringsImpl.findAllPossibleSubstrings(str);
+//		findAllPossibleSubstrings(str);
 	}
 
 	/**
